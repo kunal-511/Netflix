@@ -1,0 +1,143 @@
+.header {
+  height: 80px;
+  background-color: rgb(16, 16, 16);
+  display: flex;
+  align-items: center;
+  padding: 1.1rem;
+  justify-content: space-between;
+}
+.header img {
+  height: 60%;
+}
+.header svg {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  &:hover {
+    color: rgb(216, 216, 216);
+  }
+}
+.header div {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  /* border: 1px solid white; */
+  margin: 0px 40px;
+}
+.header div a {
+  font-size: 1.12rem;
+}
+.banner {
+  width: 100%;
+  height: 600px;
+  background-color: rgb(16, 16, 16);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 3rem;
+  box-sizing: border-box;
+
+
+  &::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(16, 16, 16);
+    opacity: 0.4;
+    left: 0;
+    top:0;
+  }
+}
+.banner h1{
+    font-size: 4rem;
+color: white;
+width: 50%;
+z-index: 10;
+
+}
+.banner p{
+    font-size: 1rem;
+color: white;
+width: 50%;
+z-index: 10;
+letter-spacing: 2px;
+word-spacing: 2px;
+
+}
+
+.row div {
+  display: flex;
+
+}
+.row {
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: rgb(16, 16, 16);
+}
+.row h2 {
+  font-weight: 400;
+  margin: 0.4rem;
+}
+.card {
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.5s;
+  margin: 0.4rem;
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+.card img {
+  width: 200px;
+}
+.genreBox{
+    overflow-x: auto;
+    display: flex;
+        height: 100px;
+        background-color: rgb(16, 16, 16);
+}
+.genreBox a{
+color: black;
+background-color: white;
+padding: 1rem 0rem;
+margin: 1rem;
+border-radius: 10px;
+min-width: 10rem;
+text-align: center;
+transition: all 0.5s;
+
+&:hover{
+    background-color: rgb(216, 216, 216);
+}
+}
+.banner button{
+    padding: 1rem;
+    border: none;
+    width: 200px;
+    z-index: 10;
+    border-radius: 5px;
+    margin: 1rem;
+    background-color: white;
+    outline: none;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover{
+        background-color: rgb(216, 216, 216);
+    }
+}
+.banner button svg{
+    font-size: 1.5rem;
+    margin: 0px 10px;
+}
+.buttons{
+    display: flex;
+}
