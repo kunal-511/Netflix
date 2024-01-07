@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import{BiPlay} from "react-icons/bi"
-import {AiOutlinePlus} from "react-icons/ai"
+import { BiPlay } from "react-icons/bi"
+import { AiOutlinePlus } from "react-icons/ai"
 
 const apiKey = "f85ba1f658c0bf59e9107026ac466428";
 const url = "https://api.themoviedb.org/3/";
@@ -71,7 +71,6 @@ export default function Home() {
         };
         const getAllGenres = async () => {
 
-            
             try {
                 const { data: { genres } } = await axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=f85ba1f658c0bf59e9107026ac466428');
                 setGenre(genres);
@@ -79,7 +78,7 @@ export default function Home() {
                 console.error("Error fetching now playing movies:", error);
             }
         };
-getAllGenres();
+        getAllGenres();
         fetchUpcoming();
         fetchPopular();
         fetchTopRated();
@@ -89,15 +88,15 @@ getAllGenres();
     return (
         <section className="home">
             <div className="banner" style={{
-                backgroundImage: popularMovies[0]? `url(${imgUrl}/${popularMovies[0].poster_path})`:"rgb(16,16,16)"
+                backgroundImage: popularMovies[0] ? `url(${imgUrl}/${popularMovies[0].poster_path})` : "rgb(16,16,16)"
             }}>
-                {popularMovies[0] &&   <h1>{popularMovies[0].original_title}</h1>}
-                {popularMovies[0] &&   <p>{popularMovies[0].overview}</p>}
+                {popularMovies[0] && <h1>{popularMovies[0].original_title}</h1>}
+                {popularMovies[0] && <p>{popularMovies[0].overview}</p>}
                 <div className='buttons'>
-                <button> <BiPlay /> Play  </button>
-                <button>My List <AiOutlinePlus /> </button>
+                    <button> <BiPlay /> Play  </button>
+                    <button>My List <AiOutlinePlus /> </button>
                 </div>
-           
+
             </div>
             <Row title={"Now Playing"} arr={nowPlayingMovies} />
             <Row title={"Popular on Netflix"} arr={popularMovies} />
@@ -105,8 +104,8 @@ getAllGenres();
             <Row title={"Top Rated"} arr={topRatedMovies} />
 
             <div className="genreBox">
-                {genre.map((item)=>(
-                    <Link  key={item.id} to={`/genre/${item.id}`}>{item.name}</Link>
+                {genre.map((item) => (
+                    <Link key={item.id} to={`/genre/${item.id}`}>{item.name}</Link>
                 ))}
             </div>
         </section>
